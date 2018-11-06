@@ -13,19 +13,20 @@ INITIAL_URL = 'https://entertain.naver.com/ranking#type=hit_total&date='
 def main():
     print_initial_comment()
 
-    chrome_driver = load_driver('./chromedriver', 'chrome')
+    chrome_driver = load_driver('./Chrome_driver/win32/chromedriver.exe', 'chrome')
 
     for ii in range(0, 31):
         for list_num in range(1, 31):
 
-            print("COLLECT %s 's COMMENTS" % (TIME_TODAY - ii * TIME_A_DAY_BEFORE).strftime('%Y-%m-%d'))
+            print("COLLECT %s's RANK-%s COMMENTS" % (
+                (TIME_TODAY - ii * TIME_A_DAY_BEFORE).strftime('%Y-%m-%d'), list_num))
 
             get_url_page = chrome_driver.get(INITIAL_URL + (TIME_TODAY - ii * TIME_A_DAY_BEFORE).strftime('%Y-%m-%d'))
-
+            time.sleep(0.5)
             click_ranking_news = chrome_driver.find_element_by_css_selector(
                 '#ranking_list > li:nth-child(%s) > div.tit_area > a' % list_num)
             click_ranking_news.click()
-            time.sleep(1)
+            time.sleep(0.5)
             chrome_driver.implicitly_wait(0.5)
 
             try:
@@ -35,13 +36,15 @@ def main():
             except:
                 click_show_comment_btn = chrome_driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div/a[1]')
                 click_show_comment_btn.click()
-            time.sleep(2)
+            time.sleep(0.5)
 
             more_comment = chrome_driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div[8]/a')
 
             while True:
                 try:
-                    more_comment.click()
+                    for ii in range(0,9):
+                        more_comment.click()
+                    break
                 except:
                     break
 
@@ -53,8 +56,8 @@ def main():
 
 def save_comment_and_title_to_file(comments_list, title):
     TIME_NOW = int(time.time())
-    fp = open('./collected/' + str(TIME_NOW) + '.txt', 'w')
-    fp.writelines('#' * 6 + 'TITLE : ' + title + '#' * 6 + '\r\n')
+    fp = open('./collected/' + str(TIME_NOW) + '.txt', 'w', encoding='utf-8')
+    fp.writelines('#' * 6 + 'TITLE : ' + title + 'NUM : ' + str(len(comments_list)) + '#' * 6 + '\r\n')
     for comment in comments_list:
         fp.writelines(comment.text + '\r\n')
 
