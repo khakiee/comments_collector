@@ -4,6 +4,8 @@ certifi==2018.10.15
 chardet==3.0.4
 html5lib==1.0.1
 idna==2.7
+JPype1==0.6.3
+konlpy==0.5.1
 requests==2.20.0
 selenium==3.141.0
 six==1.11.0
