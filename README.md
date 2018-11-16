@@ -2,8 +2,8 @@
 ### requirements
 * Chrome driver - https://chromedriver.storage.googleapis.com/index.html?path=2.43/
 * PhantomJS - http://phantomjs.org/download.html
-* Selenium - included in .venv
-* bs4(Beautiful soap) - included in .venv
+* Selenium - `pip install selenum`
+* bs4(Beautiful soap) - `pip install bs4`
 
 ### Introduce
 * 네이버 기사 댓글 수집기입니다.
