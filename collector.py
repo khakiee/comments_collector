@@ -143,16 +143,16 @@ def click_ranking_news(driver, category, list_num):
     # 연예 뉴스와 그 외 뉴스 페이지의 ranking list의 css selecor 값이 다름
     # TODO : xpath로 변경
     if category > 0:
-        click_ranking_news = driver.find_element_by_css_selector(
+        ranking_news_link = driver.find_element_by_css_selector(
             '#wrap > table > tbody > tr > td.content > div > div.ranking > '
             'ol > li.ranking_item.is_num%s > div.ranking_text '
             '> div.ranking_headline > a' % str(list_num))
-        click_ranking_news.click()
+        ranking_news_link.click()
 
     elif category == 0:
-        click_ranking_news = driver.find_element_by_css_selector(
+        ranking_news_link = driver.find_element_by_css_selector(
             '#ranking_list > li:nth-child(%s) > div.tit_area > a' % list_num)
-        click_ranking_news.click()
+        ranking_news_link.click()
 
 
 def click_show_comments(driver, category):
@@ -160,21 +160,21 @@ def click_show_comments(driver, category):
     if category > 0:
         # 정치, 경제, 사회 뉴스에서 외부 뉴스와 네이버 뉴스의 '댓글 더보기 버튼이 다르기 때문에 구분
         try:
-            click_show_comments = driver.find_element_by_xpath('//*[@id="cbox_module"]/div[2]/div[9]/a')
-            click_show_comments.click()
+            show_comments_btn = driver.find_element_by_xpath('//*[@id="cbox_module"]/div[2]/div[9]/a')
+            show_comments_btn.click()
         except:
-            click_show_comments = driver.find_element_by_xpath(
+            show_comments_btn = driver.find_element_by_xpath(
                 '//*[@id="cbox_module"]/div/div/a[1]')
-            click_show_comments.click()
+            show_comments_btn.click()
     elif category == 0:
         # 연예 뉴스에서 외부 뉴스와 네이버 뉴스의 '댓글 더보기' 버튼이 다르기 때문에 구분
         try:
-            click_show_comments = driver.find_element_by_xpath(
+            show_comments_btn = driver.find_element_by_xpath(
                 '//*[@id="cbox_module"]/div[2]/div[9]/a/span[1]')
-            click_show_comments.click()
+            show_comments_btn.click()
         except:
-            click_show_comments = driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div/a[1]')
-            click_show_comments.click()
+            show_comments_btn = driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div/a[1]')
+            show_comments_btn.click()
 
 
 def click_more_comment(driver, category, loop_num):
@@ -182,16 +182,16 @@ def click_more_comment(driver, category, loop_num):
     if category > 0:
         # 정치, 경제, 사회 에서 네이버 뉴스와 외부 뉴스의 '더보기' 버튼의 xpath가 다르기 때문에 구분
         try:
-            more_comment = driver.find_element_by_xpath('//*[@id="cbox_module"]/div[2]/div[9]/a')
+            more_comment_btn = driver.find_element_by_xpath('//*[@id="cbox_module"]/div[2]/div[9]/a')
         except:
-            more_comment = driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div[9]/a')
+            more_comment_btn = driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div[9]/a')
     elif category == 0:
-        more_comment = driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div[8]/a')
+        more_comment_btn = driver.find_element_by_xpath('//*[@id="cbox_module"]/div/div[8]/a')
 
     while True:
         try:
             for ii in range(0, loop_num):
-                more_comment.click()
+                more_comment_btn.click()
             break
         except:
             # '더보기' 버튼 클릭 불가 시 (더 볼 댓글이 없는 상태) 강제 break
