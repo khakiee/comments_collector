@@ -15,6 +15,7 @@ CATEGORY_LIST = ['Entertain', 'Politics', 'Economic', 'Social']
 MAX_RANK = 30
 MAX_LOOP_SHOW_MORE_BTN = 10
 
+SLEEP_TIME = 0.5
 
 def main():
     print_initial_comment()
@@ -33,16 +34,16 @@ def main():
 
         for list_num in range(1, MAX_RANK + 1):
             chrome_driver.get(URL_LIST[category] + start_date_str)
-            time.sleep(0.5)
+            time.sleep(SLEEP_TIME)
 
             click_ranking_news(chrome_driver, category, list_num)
-            time.sleep(0.5)
+            time.sleep(SLEEP_TIME)
 
             click_show_comments(chrome_driver, category)
-            time.sleep(0.5)
+            time.sleep(SLEEP_TIME)
 
             click_more_comment(chrome_driver, category, MAX_LOOP_SHOW_MORE_BTN)
-            time.sleep(0.5)
+            time.sleep(SLEEP_TIME)
 
             comments_list, title = collect_all_comments_and_title(chrome_driver, category)
             save_comment_and_title_to_file(comments_list, title, category)
@@ -203,6 +204,9 @@ def check_values_isvalid():
 
     if URL_LIST == None:
         print('URL_LIST is empty')
+
+    if SLEEP_TIME < 0 :
+        print('SLEEP_TIME is not valid value (double 0~)')
 
 
 if __name__ == '__main__':
