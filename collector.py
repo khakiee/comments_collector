@@ -12,7 +12,7 @@ TIME_A_DAY = timedelta(days=1)
 URL_LIST = [val.ENT_URL, val.POL_URL, val.ECO_URL, val.SOC_URL]
 CATEGORY_LIST = ['Entertain', 'Politics', 'Economic', 'Social']
 
-MAX_RANK = 1
+MAX_RANK = 30
 MAX_LOOP_SHOW_MORE_BTN = 10
 
 
