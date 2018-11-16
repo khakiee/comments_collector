@@ -2,8 +2,8 @@
 ### requirements
 * Chrome driver - https://chromedriver.storage.googleapis.com/index.html?path=2.43/
 * PhantomJS - http://phantomjs.org/download.html
-* Selenium - `pip install selenum`
-* bs4(Beautiful soap) - `pip install bs4`
+* Selenium - https://www.seleniumhq.org/
+* bs4(Beautiful soap) - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 
 ### Introduce
 * 네이버 기사 댓글 수집기입니다.
