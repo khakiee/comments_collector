@@ -21,6 +21,7 @@
 3. collector.py 에서 `MAX_LOOP_SHOW_MORE_BTN`, `MAX_RANK` 수치 조정
     * `MAX_LOOP_SHOW_MORE_BTN` : 댓글 더보기 버튼, 한 기사당 수집하는 댓글 갯수
     * `MAX_RANK` : 1위부터 30위 까지 존재하는 랭크에서 몇 순위의 기사까지 수집할 지 정하는 수
+    * `SLEEP_TIME` : 각 버튼 클릭 후 리소스 로드까지 대기할 시간, 리소스 전부 로딩까지 대기하는 기능이 없기 때문에 추가
 4. collector.py를 실행
     * ent, pol, eco, soc : 카테고리, 각각 연예, 정치, 경제, 사회
     * period : 수집 시작 날짜 ~ 수집 끝나는 날짜 (Format : Y-m-d)

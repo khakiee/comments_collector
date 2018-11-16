@@ -101,7 +101,7 @@ def load_driver(driver_path, driver_type):
 
 
 def init_menu_and_select_category():
-    print("(ent, pol, eco, soc) category : ")
+    print("category (ent, pol, eco, soc) : ")
     category_dict = {"ent": 0, "pol": 1, "eco": 2, "soc": 3}
     try:
         category = category_dict[input()]
