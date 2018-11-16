@@ -57,13 +57,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="md" value="743" />
-          <entry key="py" value="4230" />
+          <entry key="py" value="4271" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="743" />
-          <entry key="Python" value="4230" />
+          <entry key="Python" value="4271" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -88,11 +88,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/collector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="233">
+              <caret line="134" column="54" lean-forward="true" selection-start-line="134" selection-start-column="54" selection-end-line="134" selection-end-column="54" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
-                <marker date="1542363203990" expanded="true" signature="6259:6504" ph="..." />
+                <marker date="1542363314988" expanded="true" signature="6269:6514" ph="..." />
               </folding>
             </state>
           </provider>
@@ -145,6 +145,8 @@
       <find>LOOP_NUM</find>
       <find>RANK_LIMIT</find>
       <find>click_show_comments</find>
+      <find>create_date_data</find>
+      <find>create_strf_date</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -358,7 +360,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12966879" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12966879" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -369,7 +371,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32948583" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32948583" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -499,11 +501,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/collector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="233">
+          <caret line="134" column="54" lean-forward="true" selection-start-line="134" selection-start-column="54" selection-end-line="134" selection-end-column="54" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
-            <marker date="1542363203990" expanded="true" signature="6259:6504" ph="..." />
+            <marker date="1542363314988" expanded="true" signature="6269:6514" ph="..." />
           </folding>
         </state>
       </provider>

@@ -22,7 +22,7 @@ def main():
     check_values_isvalid()
 
     category = init_menu_and_select_category()
-    start_date, end_date = create_date_data(category)
+    start_date, end_date = create_period_data(category)
 
     chrome_driver = load_driver('./chromedriver', 'chrome')
 
@@ -30,7 +30,7 @@ def main():
 
         if start_date > end_date:
             break
-        start_date_str = create_strf_date(start_date, category)
+        start_date_str = date_to_strf_date(start_date, category)
 
         for list_num in range(1, MAX_RANK + 1):
             chrome_driver.get(URL_LIST[category] + start_date_str)
@@ -112,7 +112,7 @@ def init_menu_and_select_category():
     return category
 
 
-def create_date_data(category):
+def create_period_data(category):
     print("choose period (ex. 2018-11-06 2018-11-08) : ")
 
     collect_period = input()
@@ -129,8 +129,8 @@ def create_date_data(category):
     return (start_date, end_date)
 
 
-def create_strf_date(start_date, category):
-    # 연예 뉴스와 그 외 뉴스 페이지의 url date format이 다르기 때문에 구분
+def date_to_strf_date(start_date, category):
+    # 연예 뉴스와 그 외 뉴스 페이지의 url에 붙는 date format이 다르기 때문에 구분
     if category > 0:
         start_date_str = start_date.strftime('%Y%m%d')
     elif category == 0:
